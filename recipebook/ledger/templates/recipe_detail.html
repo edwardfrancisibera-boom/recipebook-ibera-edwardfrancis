@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ object.name }}</h2>
+<ul>
+    {% for ri in object.ingredients.all %}
+        <li>
+            <strong>{{ ri.ingredient.name }}</strong> - {{ ri.quantity }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'ledger:recipes' %}">Recipes</a>
+{% endblock %}
