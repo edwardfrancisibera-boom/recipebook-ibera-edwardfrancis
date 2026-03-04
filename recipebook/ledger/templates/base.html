@@ -21,9 +21,7 @@
                 <button type="submit">Logout</button>
             </form>
         {% else %}
-            {% if request.get_full_path != '/accounts/login' %}
-                <a href="{% url 'login' %}">Login</a>
-            {% endif %}
+            <a href="{% url 'login' %}">Login</a>
         {% endif %}
         <div id="content">
             {% block content %}
