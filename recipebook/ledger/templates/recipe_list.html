@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    Reciple List
+    Recipe List
 {% endblock title %}
 {% block content %}
     <h2>Recipes</h2>
@@ -13,5 +13,6 @@
                 </li>
             {% endfor %}
         </ul>
+        <a href="{% url 'ledger:recipe_create' %}">Add Recipe</a>
     </h3>
 {% endblock content %}
