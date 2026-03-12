@@ -6,6 +6,10 @@ from .models import Recipe, RecipeIngredient, Ingredient, Profile, RecipeImage
 class RecipeIngredientInline(admin.TabularInline):
     model = RecipeIngredient
 
+class RecipeImageInLine(admin.TabularInline):
+    model = RecipeImage
+
+
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
     inlines = [RecipeIngredientInline, RecipeImageInLine]
@@ -16,9 +20,6 @@ class IngredientAdmin(admin.ModelAdmin):
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
-
-class RecipeImageInLine(admin.TabularInline):
-    admin = RecipeImage
 
 class UserAdmin(BaseUserAdmin):
     inlines = [ProfileInline,]
