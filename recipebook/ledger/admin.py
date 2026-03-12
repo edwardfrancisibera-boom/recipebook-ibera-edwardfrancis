@@ -8,7 +8,7 @@ class RecipeIngredientInline(admin.TabularInline):
 
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
-    inlines = [RecipeIngredientInline]
+    inlines = [RecipeIngredientInline, RecipeImageInLine]
 
 class IngredientAdmin(admin.ModelAdmin):
     model = Ingredient
@@ -18,7 +18,7 @@ class ProfileInline(admin.StackedInline):
     can_delete = False
 
 class RecipeImageInLine(admin.TabularInline):
-    image = RecipeImage
+    admin = RecipeImage
 
 class UserAdmin(BaseUserAdmin):
     inlines = [ProfileInline,]

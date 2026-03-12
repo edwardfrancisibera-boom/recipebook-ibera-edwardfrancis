@@ -4,9 +4,9 @@ from .models import Recipe, RecipeImage
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        excluded = ["author"]
+        exclude = ["author"]
 
 class RecipeImageForm(forms.ModelForm):
     class Meta:
         model = RecipeImage
-        excluded = ["recipe"]
+        exclude = ["recipe"]
